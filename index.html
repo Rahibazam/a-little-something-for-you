@@ -8,6 +8,8 @@
     <!-- daisyui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- css sheets -->
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +18,127 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-[#1C1F4A]">
 
-    <header>
+    <section>
 
-    </header>
+        <header>
 
-    <main>
+            <section class="intro" id="intro">
+                <h1>Hey Labiba,</h1>
+                <h2>It’s your day.</h2>
+                <div class="spark"></div>
+                <p>I made something just for you — a little world built out of moments, glows, and quiet thoughts.</p>
+                <a href="#message" class="cta">Let’s begin ✨</a>
+                <div class="scroll-indicator">scroll ↓</div>
+            </section>
 
-    </main>
+        </header>
 
-    <footer>
+        <main>
 
-    </footer>
+            <!-- 💌 Message Section -->
+            <section class="message-deck" id="message">
+                <!-- Background Particles Layer -->
+                <div class="particle-layer">
+                    <canvas id="particleCanvas"></canvas>
+                </div>
+
+                <!-- Deck of Cards -->
+                <div class="deck-container">
+                    <div class="card active">
+                        <p>Every once in a while, someone comes along who changes the rhythm of your days. You did that
+                            for me.</p>
+                    </div>
+                    <div class="card">
+                        <p>You make quiet feel like home — the kind of peace you don’t have to chase.</p>
+                    </div>
+                    <div class="card">
+                        <p>It’s not just your smile, or the way you talk — it’s the way you see the world, and make it
+                            softer for everyone else.</p>
+                    </div>
+                    <div class="card">
+                        <p>I hope you always remember: you deserve gentle things, slow mornings, and people who listen
+                            like you do.</p>
+                    </div>
+                    <div class="card final">
+                        <h3>Happy Birthday, Labiba 🤍</h3>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </section>
+
+    <script>
+        /* =======================
+           CARD DECK INTERACTION
+        ======================= */
+        const cards = document.querySelectorAll(".card");
+        let currentCard = 0;
+        function showNextCard() {
+            if (currentCard < cards.length - 1) {
+                const current = cards[currentCard];
+                const next = cards[currentCard + 1];
+                current.classList.add("slide-out");
+                setTimeout(() => {
+                    current.classList.remove("active");
+                    next.classList.add("active", "slide-in");
+                    setTimeout(() => next.classList.remove("slide-in"), 800);
+                    currentCard++;
+                }, 700);
+            }
+        }
+        document.querySelector(".deck-container").addEventListener("click", showNextCard);
+
+        /* =======================
+           FLOATING PARTICLES
+        ======================= */
+        const canvas = document.getElementById("particleCanvas");
+        const ctx = canvas.getContext("2d");
+        let particlesArray = [];
+        let w, h;
+
+        function initCanvas() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+            particlesArray = [];
+            for (let i = 0; i < 35; i++) {
+                particlesArray.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    r: Math.random() * 2 + 1,
+                    d: Math.random() * 1.5 + 0.5,
+                    o: Math.random() * 0.6 + 0.2
+                });
+            }
+        }
+        function drawParticles() {
+            ctx.clearRect(0, 0, w, h);
+            ctx.fillStyle = "rgba(120,200,255,0.25)";
+            particlesArray.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            updateParticles();
+            requestAnimationFrame(drawParticles);
+        }
+        function updateParticles() {
+            particlesArray.forEach(p => {
+                p.y -= p.d * 0.3;
+                if (p.y < -10) p.y = h + 10;
+            });
+        }
+        window.addEventListener("resize", initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
 
 </body>
 
