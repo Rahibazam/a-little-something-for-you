@@ -67,6 +67,235 @@
                 </div>
             </section>
 
+            <!-- 🌠 Celestial Book – Why You're Amazing -->
+            <section class="cb-section" id="why-amazing-book">
+                <!-- Starry background canvas -->
+                <canvas id="cb-stars"></canvas>
+
+                <div class="cb-inner">
+                    <header class="cb-header">
+                        <h2 class="cb-title">Why you&rsquo;re amazing</h2>
+                        <p class="cb-subtitle">I wrote you a little book. Every page is a reason.</p>
+                    </header>
+
+                    <!-- Book -->
+                    <div class="cb-book-wrap">
+                        <div class="cb-book">
+                            <!-- Left Page -->
+                            <div class="cb-page cb-page-left">
+                                <div class="cb-page-inner">
+                                    <p class="cb-left-eyebrow">For Labiba</p>
+                                    <h3 class="cb-left-heading">A quiet little book<br>about you.</h3>
+                                    <p class="cb-left-body">
+                                        No grand speeches. Just small truths I keep noticing about you, gathered in one
+                                        place.
+                                    </p>
+                                    <p class="cb-left-signature">— Rahib 🤍</p>
+                                </div>
+                            </div>
+
+                            <!-- Right Page (dynamic) -->
+                            <div class="cb-page cb-page-right">
+                                <div class="cb-page-inner">
+                                    <div class="cb-page-meta">
+                                        <span class="cb-page-label">Page</span>
+                                        <span class="cb-page-number" id="cb-page-number">1</span>
+                                        <span class="cb-page-count" id="cb-page-count">/ 5</span>
+                                    </div>
+                                    <h3 class="cb-page-heading" id="cb-page-heading"></h3>
+                                    <p class="cb-page-text" id="cb-page-text"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="cb-nav-row">
+                            <button class="cb-nav cb-nav-prev" type="button" id="cb-prev" disabled>
+                                <span class="cb-nav-arrow">←</span>
+                                Previous page
+                            </button>
+                            <div class="cb-nav-hint">Tap the page or use the buttons to turn.</div>
+                            <button class="cb-nav cb-nav-next" type="button" id="cb-next">
+                                Next page
+                                <span class="cb-nav-arrow">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 🎬 Reels Section -->
+            <section class="reel-gallery" id="reels">
+                <canvas id="reel-bg-stars"></canvas>
+
+                <div class="reel-container">
+                    <header class="reel-header">
+                        <h2 class="reel-title">Some moments I wanted to keep.</h2>
+                        <p class="reel-sub">Little glimpses that remind me of you.</p>
+                    </header>
+
+                    <div class="reel-grid">
+                        <!-- Reel placeholders -->
+                        <div class="reel-card"
+                            data-video="https://www.instagram.com/reel/DPNUBrsEuX6/?utm_source=ig_web_copy_link&igsh=MXF1bGc3bmhqaHA3bA==">
+                            <div class="reel-thumb">
+                                <div class="reel-thumb-overlay">
+                                    <span class="reel-play">▶</span>
+                                    <h3 class="reel-caption">Reel 01</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-card"
+                            data-video="https://www.instagram.com/reel/DPNUBrsEuX6/?utm_source=ig_web_copy_link&igsh=MXF1bGc3bmhqaHA3bA==">
+                            <div class="reel-thumb">
+                                <div class="reel-thumb-overlay">
+                                    <span class="reel-play">▶</span>
+                                    <h3 class="reel-caption">Reel 02</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-card"
+                            data-video="https://www.instagram.com/reel/DPNUBrsEuX6/?utm_source=ig_web_copy_link&igsh=MXF1bGc3bmhqaHA3bA==">
+                            <div class="reel-thumb">
+                                <div class="reel-thumb-overlay">
+                                    <span class="reel-play">▶</span>
+                                    <h3 class="reel-caption">Reel 03</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-card"
+                            data-video="https://www.instagram.com/reel/DPNUBrsEuX6/?utm_source=ig_web_copy_link&igsh=MXF1bGc3bmhqaHA3bA==">
+                            <div class="reel-thumb">
+                                <div class="reel-thumb-overlay">
+                                    <span class="reel-play">▶</span>
+                                    <h3 class="reel-caption">Reel 04</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-card"
+                            data-video="https://www.instagram.com/reel/DPNUBrsEuX6/?utm_source=ig_web_copy_link&igsh=MXF1bGc3bmhqaHA3bA==">
+                            <div class="reel-thumb">
+                                <div class="reel-thumb-overlay">
+                                    <span class="reel-play">▶</span>
+                                    <h3 class="reel-caption">Reel 05</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fullscreen Viewer -->
+                <div class="reel-modal" id="reel-modal">
+                    <div class="reel-modal-bg"></div>
+                    <div class="reel-modal-content">
+                        <iframe id="reel-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                        <button class="reel-close" id="reel-close">×</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 🎧 Playlist Section -->
+            <section class="pl-section" id="playlist">
+                <canvas id="pl-stars"></canvas>
+
+                <div class="pl-inner">
+                    <header class="pl-header">
+                        <h2 class="pl-title">Songs that sound like you</h2>
+                        <p class="pl-sub">A few tracks that always remind me of you.</p>
+                    </header>
+
+                    <div class="pl-grid">
+                        <!-- CARD 1 -->
+                        <div class="pl-card" data-index="0">
+                            <div class="pl-cover" style="--cover-url: url('images/song1.jpg');">
+                                <span class="pl-cover-label">Album Art</span>
+                            </div>
+                            <div class="pl-meta">
+                                <h3 class="pl-song">This Fire</h3>
+                                <p class="pl-artist">Killswitch Engage</p>
+                            </div>
+                            <div class="pl-controls">
+                                <button class="pl-btn pl-prev" type="button">⏮</button>
+                                <button class="pl-btn pl-play" type="button">▶</button>
+                                <button class="pl-btn pl-next" type="button">⏭</button>
+                            </div>
+                            <!-- 🔊 REPLACE src WITH YOUR REAL FILE LATER -->
+                            <audio class="pl-audio" src="audio/song1.mp3"></audio>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="pl-card" data-index="1">
+                            <div class="pl-cover" style="--cover-url: url('images/song2.jpg');">
+                                <span class="pl-cover-label">Album Art</span>
+                            </div>
+                            <div class="pl-meta">
+                                <h3 class="pl-song">Numb</h3>
+                                <p class="pl-artist">Linkin Park</p>
+                            </div>
+                            <div class="pl-controls">
+                                <button class="pl-btn pl-prev" type="button">⏮</button>
+                                <button class="pl-btn pl-play" type="button">▶</button>
+                                <button class="pl-btn pl-next" type="button">⏭</button>
+                            </div>
+                            <audio class="pl-audio" src="audio/song2.mp3"></audio>
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="pl-card" data-index="2">
+                            <div class="pl-cover" style="--cover-url: url('images/song3.jpg');">
+                                <span class="pl-cover-label">Album Art</span>
+                            </div>
+                            <div class="pl-meta">
+                                <h3 class="pl-song">Believer</h3>
+                                <p class="pl-artist">Imagine Dragons</p>
+                            </div>
+                            <div class="pl-controls">
+                                <button class="pl-btn pl-prev" type="button">⏮</button>
+                                <button class="pl-btn pl-play" type="button">▶</button>
+                                <button class="pl-btn pl-next" type="button">⏭</button>
+                            </div>
+                            <audio class="pl-audio" src="audio/song3.mp3"></audio>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 🎬 Cosmic Spotlight Section -->
+            <section class="vs-section" id="video">
+                <canvas id="vs-stars"></canvas>
+
+                <div class="vs-inner">
+                    <div class="vs-header">
+                        <h2 class="vs-title">For You</h2>
+                        <p class="vs-sub">A small piece of me, captured in light.</p>
+                    </div>
+
+                    <div class="vs-video-wrapper">
+                        <div class="vs-halo"></div>
+                        <video id="vs-video" class="vs-video" src="videos/placeholder.mp4" controls preload="metadata"
+                            poster="images/video-placeholder.jpg"></video>
+                        <button id="vs-play-btn" class="vs-play-btn">▶</button>
+                    </div>
+
+                    <p class="vs-caption">— Thank you for being my favorite part of this universe.</p>
+                </div>
+            </section>
+
+            <!-- 🌙 Final Message Section -->
+            <section class="fm-section" id="final-message">
+                <canvas id="fm-stars"></canvas>
+
+                <div class="fm-inner">
+                    <p class="fm-line" id="fm-line">Some moments don’t end, they just stay.</p>
+                    <p class="fm-signature">— Rahib 🌙</p>
+                    <button class="fm-btn" id="fm-replay">Replay Journey</button>
+                </div>
+            </section>
+
         </main>
 
         <footer>
@@ -138,6 +367,572 @@
         window.addEventListener("resize", initCanvas);
         initCanvas();
         drawParticles();
+
+        /* ================================
+   PARALLAX / MOUSE TILT
+================================ */
+        const deck = document.querySelector(".deck-container");
+        deck.addEventListener("mousemove", (e) => {
+            const card = cards[currentCard];
+            if (!card.classList.contains("active")) return;
+            const rect = deck.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const midX = rect.width / 2;
+            const midY = rect.height / 2;
+            const rotateX = ((y - midY) / midY) * 6;
+            const rotateY = ((x - midX) / midX) * -6;
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+        deck.addEventListener("mouseleave", () => {
+            const card = cards[currentCard];
+            card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+        });
+    </script>
+
+    <script>
+        /* ====== Star Canvas ====== */
+        const wbCanvas = document.getElementById("wb-stars");
+        const wbCtx = wbCanvas.getContext("2d");
+        let wbStars = [], wbW, wbH;
+        function wbResize() {
+            wbW = wbCanvas.width = window.innerWidth;
+            wbH = wbCanvas.height = window.innerHeight;
+            wbStars = [];
+            for (let i = 0; i < 100; i++)
+                wbStars.push({ x: Math.random() * wbW, y: Math.random() * wbH, r: Math.random() * 1.2, a: Math.random(), s: Math.random() * 0.3 });
+        }
+        function wbAnim() {
+            wbCtx.clearRect(0, 0, wbW, wbH);
+            wbStars.forEach(s => {
+                wbCtx.beginPath();
+                wbCtx.globalAlpha = s.a;
+                wbCtx.fillStyle = "#FAF9F6";
+                wbCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                wbCtx.fill();
+                s.y -= s.s;
+                if (s.y < 0) { s.y = wbH; s.x = Math.random() * wbW; }
+            });
+            requestAnimationFrame(wbAnim);
+        }
+        window.addEventListener("resize", wbResize);
+        wbResize(); wbAnim();
+
+        /* ====== Reveal Bubbles on Scroll ====== */
+        const wbSection = document.querySelector(".wb-section");
+        window.addEventListener("scroll", () => {
+            const rect = wbSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                document.querySelectorAll(".wb-bubble").forEach((b, i) => {
+                    setTimeout(() => b.classList.add("show"), i * 500);
+                });
+            }
+        });
+    </script>
+
+    <script>
+        /* =========================================================
+           Celestial Book – Data (pages)
+        ========================================================= */
+        (function () {
+            const cbPages = [
+                {
+                    title: "Your heart",
+                    text:
+                        "Because your heart carries more warmth than any sunrise. You care in ways that most people never see, and you do it quietly, without keeping score."
+                },
+                {
+                    title: "Your calm",
+                    text:
+                        "Because even when everything feels loud and heavy, you have this soft kind of calm. The kind that doesn’t demand attention, but somehow makes things feel lighter."
+                },
+                {
+                    title: "The way you listen",
+                    text:
+                        "Because you listen in a way that makes people feel seen, not just heard. You catch the pauses, the hesitations, the things that never make it into words."
+                },
+                {
+                    title: "The little things",
+                    text:
+                        "Because you notice small things that most people walk past — a shift in tone, a tired goodnight, a quiet &ldquo;it&rsquo;s fine&rdquo; that clearly isn&rsquo;t. And you care enough to check in."
+                },
+                {
+                    title: "You just are",
+                    text:
+                        "Because there isn&rsquo;t a checklist that can explain you. You&rsquo;re amazing in ways that don&rsquo;t always fit into sentences — and that&rsquo;s exactly what makes you you."
+                }
+            ];
+
+            /* =========================================================
+               Typewriter + Page Logic
+            ========================================================= */
+            document.addEventListener("DOMContentLoaded", function () {
+                const headingEl = document.getElementById("cb-page-heading");
+                const textEl = document.getElementById("cb-page-text");
+                const numEl = document.getElementById("cb-page-number");
+                const countEl = document.getElementById("cb-page-count");
+                const nextBtn = document.getElementById("cb-next");
+                const prevBtn = document.getElementById("cb-prev");
+                const rightPage = document.querySelector(".cb-page-right");
+
+                if (!headingEl || !textEl || !numEl || !countEl || !nextBtn || !prevBtn || !rightPage) return;
+
+                let currentIndex = 0;
+                let typingTimer = null;
+                let isTyping = false;
+
+                countEl.textContent = "/ " + cbPages.length;
+
+                function typeText(element, fullText, speed) {
+                    element.innerHTML = "";
+                    let i = 0;
+                    isTyping = true;
+
+                    function step() {
+                        if (i <= fullText.length) {
+                            element.innerHTML = fullText.slice(0, i);
+                            i++;
+                            typingTimer = setTimeout(step, speed);
+                        } else {
+                            isTyping = false;
+                        }
+                    }
+                    step();
+                }
+
+                function setPage(index, withAnimation) {
+                    if (index < 0 || index >= cbPages.length) return;
+                    currentIndex = index;
+
+                    // Update page counters
+                    numEl.textContent = (currentIndex + 1).toString();
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === cbPages.length - 1;
+
+                    // Cancel any ongoing typing
+                    if (typingTimer) clearTimeout(typingTimer);
+                    isTyping = false;
+
+                    const pageData = cbPages[currentIndex];
+
+                    if (withAnimation) {
+                        rightPage.classList.remove("cb-turn");
+                        // small reflow to restart animation
+                        void rightPage.offsetWidth;
+                        rightPage.classList.add("cb-turn");
+                    }
+
+                    headingEl.textContent = pageData.title;
+                    typeText(textEl, pageData.text, 22);
+                }
+
+                function goNext() {
+                    if (isTyping) return;
+                    if (currentIndex < cbPages.length - 1) {
+                        setPage(currentIndex + 1, true);
+                    }
+                }
+
+                function goPrev() {
+                    if (isTyping) return;
+                    if (currentIndex > 0) {
+                        setPage(currentIndex - 1, true);
+                    }
+                }
+
+                nextBtn.addEventListener("click", goNext);
+                prevBtn.addEventListener("click", goPrev);
+                rightPage.addEventListener("click", goNext); // tap page to go forward
+
+                // Initial page
+                setPage(0, false);
+            });
+
+            /* =========================================================
+               Starfield Background for this Section
+            ========================================================= */
+            (function setupCelestialBookStars() {
+                const canvas = document.getElementById("cb-stars");
+                if (!canvas) return;
+                const ctx = canvas.getContext("2d");
+                let stars = [];
+                let width = 0;
+                let height = 0;
+
+                function resize() {
+                    const section = document.getElementById("why-amazing-book");
+                    if (!section) return;
+                    const rect = section.getBoundingClientRect();
+                    width = rect.width;
+                    height = rect.height;
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    stars = [];
+                    const count = 110;
+                    for (let i = 0; i < count; i++) {
+                        stars.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            r: Math.random() * 1.3 + 0.4,
+                            a: Math.random() * 0.5 + 0.3,
+                            v: Math.random() * 0.4 + 0.1
+                        });
+                    }
+                }
+
+                function draw() {
+                    ctx.clearRect(0, 0, width, height);
+                    stars.forEach((s) => {
+                        ctx.beginPath();
+                        ctx.globalAlpha = s.a;
+                        ctx.fillStyle = "#FAF9F6";
+                        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        s.y -= s.v;
+                        if (s.y < -5) {
+                            s.y = height + 5;
+                            s.x = Math.random() * width;
+                        }
+                    });
+                    requestAnimationFrame(draw);
+                }
+
+                window.addEventListener("resize", resize);
+                resize();
+                draw();
+            })();
+        })();
+    </script>
+
+    <script>
+        /* ✨ Starfield Background */
+        (function () {
+            const canvas = document.getElementById("reel-bg-stars");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let stars = [], W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight * 0.9;
+                stars = [];
+                for (let i = 0; i < 80; i++)
+                    stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.2, a: Math.random(), s: Math.random() * 0.3 });
+            }
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                stars.forEach(s => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = s.a;
+                    ctx.fillStyle = "#FAF9F6";
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    s.y -= s.s;
+                    if (s.y < -5) { s.y = H + 5; s.x = Math.random() * W; }
+                });
+                requestAnimationFrame(draw);
+            }
+            window.addEventListener("resize", resize);
+            resize(); draw();
+        })();
+
+        /* 🎬 Reveal on scroll */
+        document.addEventListener("scroll", () => {
+            document.querySelectorAll(".reel-card").forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) { card.classList.add("visible"); }
+            });
+        });
+
+        /* 🎬 Modal Viewer */
+        (function () {
+            const cards = document.querySelectorAll(".reel-card");
+            const modal = document.getElementById("reel-modal");
+            const iframe = document.getElementById("reel-iframe");
+            const closeBtn = document.getElementById("reel-close");
+
+            if (!cards.length || !modal) return;
+
+            cards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const videoURL = card.getAttribute("data-video");
+                    iframe.src = videoURL;
+                    modal.classList.add("open");
+                    document.body.style.overflow = "hidden";
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                modal.classList.remove("open");
+                iframe.src = "";
+                document.body.style.overflow = "";
+            });
+
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal || e.target.classList.contains("reel-modal-bg")) {
+                    modal.classList.remove("open");
+                    iframe.src = "";
+                    document.body.style.overflow = "";
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        /* 🌌 Starfield Background for Playlist */
+        (function () {
+            const canvas = document.getElementById("pl-stars");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let stars = [], W, H;
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight * 0.7;
+                stars = [];
+                for (let i = 0; i < 60; i++) {
+                    stars.push({
+                        x: Math.random() * W,
+                        y: Math.random() * H,
+                        r: Math.random() * 1.2 + 0.3,
+                        a: Math.random() * 0.5 + 0.3,
+                        s: Math.random() * 0.3 + 0.1
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                stars.forEach(s => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = s.a;
+                    ctx.fillStyle = "#FAF9F6";
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    s.y -= s.s;
+                    if (s.y < -5) {
+                        s.y = H + 5;
+                        s.x = Math.random() * W;
+                    }
+                });
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+            draw();
+        })();
+
+        /* 🎧 Playlist Logic – play / pause / prev / next */
+        (function () {
+            const cards = Array.from(document.querySelectorAll(".pl-card"));
+            if (!cards.length) return;
+
+            let currentIndex = null;
+
+            function pauseAll() {
+                cards.forEach(card => {
+                    const audio = card.querySelector(".pl-audio");
+                    const playBtn = card.querySelector(".pl-play");
+                    card.classList.remove("pl-playing");
+                    if (audio && !audio.paused) audio.pause();
+                    if (playBtn) playBtn.textContent = "▶";
+                });
+            }
+
+            function startCard(index) {
+                if (index < 0 || index >= cards.length) return;
+                const card = cards[index];
+                const audio = card.querySelector(".pl-audio");
+                const playBtn = card.querySelector(".pl-play");
+                if (!audio || !playBtn) return;
+
+                pauseAll();
+                audio.currentTime = 0;
+                audio.play().catch(() => { /* ignore if file missing for now */ });
+                playBtn.textContent = "❚❚";
+                card.classList.add("pl-playing");
+                currentIndex = index;
+            }
+
+            function toggleCard(index) {
+                const card = cards[index];
+                const audio = card.querySelector(".pl-audio");
+                const playBtn = card.querySelector(".pl-play");
+                if (!audio || !playBtn) return;
+
+                const isPlaying = card.classList.contains("pl-playing");
+
+                if (isPlaying) {
+                    // Pause this card
+                    audio.pause();
+                    playBtn.textContent = "▶";
+                    card.classList.remove("pl-playing");
+                    currentIndex = null;
+                } else {
+                    // Start this card fresh
+                    startCard(index);
+                }
+            }
+
+            cards.forEach((card, i) => {
+                const playBtn = card.querySelector(".pl-play");
+                const prevBtn = card.querySelector(".pl-prev");
+                const nextBtn = card.querySelector(".pl-next");
+                const audio = card.querySelector(".pl-audio");
+
+                if (playBtn) {
+                    playBtn.addEventListener("click", () => {
+                        toggleCard(i);
+                    });
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener("click", () => {
+                        const target = (i - 1 + cards.length) % cards.length;
+                        startCard(target);
+                    });
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener("click", () => {
+                        const target = (i + 1) % cards.length;
+                        startCard(target);
+                    });
+                }
+
+                if (audio) {
+                    audio.addEventListener("ended", () => {
+                        card.classList.remove("pl-playing");
+                        const btn = card.querySelector(".pl-play");
+                        if (btn) btn.textContent = "▶";
+                        currentIndex = null;
+                    });
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        /* ✨ Starfield Background */
+        (function () {
+            const canvas = document.getElementById("vs-stars");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let stars = [], W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+                stars = [];
+                for (let i = 0; i < 90; i++) {
+                    stars.push({
+                        x: Math.random() * W,
+                        y: Math.random() * H,
+                        r: Math.random() * 1.2 + 0.4,
+                        a: Math.random() * 0.5 + 0.3,
+                        s: Math.random() * 0.3 + 0.1
+                    });
+                }
+            }
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                stars.forEach(s => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = s.a;
+                    ctx.fillStyle = "#FAF9F6";
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    s.y -= s.s;
+                    if (s.y < -5) { s.y = H + 5; s.x = Math.random() * W; }
+                });
+                requestAnimationFrame(draw);
+            }
+            window.addEventListener("resize", resize);
+            resize(); draw();
+        })();
+
+        /* 🎬 Play Button + Glow Logic */
+        (function () {
+            const video = document.getElementById("vs-video");
+            const playBtn = document.getElementById("vs-play-btn");
+            const section = document.querySelector(".vs-section");
+
+            if (!video || !playBtn) return;
+
+            playBtn.addEventListener("click", () => {
+                video.play().catch(() => { });
+            });
+
+            video.addEventListener("play", () => {
+                playBtn.classList.add("hidden");
+                section.classList.add("vs-dim");
+            });
+            video.addEventListener("pause", () => {
+                playBtn.classList.remove("hidden");
+                section.classList.remove("vs-dim");
+            });
+            video.addEventListener("ended", () => {
+                playBtn.classList.remove("hidden");
+                section.classList.remove("vs-dim");
+            });
+        })();
+    </script>
+
+    <script>
+        /* 🌠 Starfield Background (slower, calmer) */
+        (function () {
+            const canvas = document.getElementById("fm-stars");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let stars = [], W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+                stars = [];
+                for (let i = 0; i < 80; i++) {
+                    stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.2, a: Math.random() * 0.6, s: Math.random() * 0.1 });
+                }
+            }
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                stars.forEach(s => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = s.a;
+                    ctx.fillStyle = "#FAF9F6";
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    s.y -= s.s;
+                    if (s.y < -5) { s.y = H + 5; s.x = Math.random() * W; }
+                });
+                requestAnimationFrame(draw);
+            }
+            window.addEventListener("resize", resize);
+            resize(); draw();
+        })();
+
+        /* ✍️ Typewriter Reveal Effect */
+        (function () {
+            const line = document.getElementById("fm-line");
+            if (!line) return;
+            const text = line.textContent;
+            line.textContent = "";
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    line.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 80);
+                }
+            }
+            setTimeout(type, 600);
+        })();
+
+        /* 🔁 Replay Journey Button */
+        document.getElementById("fm-replay").addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 
 </body>
