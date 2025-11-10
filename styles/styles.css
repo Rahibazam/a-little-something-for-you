@@ -104,7 +104,7 @@ section.intro {
 }
 
 .intro p {
-  max-width: 560px;
+  max-width: 750px;
   margin: 1.5em auto 2.5em;
   color: var(--misty-gray);
   line-height: 1.8;
@@ -279,7 +279,7 @@ section.intro {
   position: relative;
   z-index: 2;
   /* above canvas */
-  width: min(90%, 600px);
+  width: min(90%, 800px);
   height: 380px;
   display: flex;
   align-items: center;
@@ -293,7 +293,7 @@ section.intro {
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  padding: 40px;
+  padding: 10px 20px;
   background:  radial-gradient(circle at 100% 0%, rgba(120, 200, 255, 0.25), transparent 65%),
     rgba(6, 7, 29, 0.96);
   box-shadow: 0 0 25px rgba(120, 200, 255, 0.15), inset 0 0 30px rgba(255, 210, 138, 0.08);
@@ -359,7 +359,7 @@ section.intro {
 
 /* ===== Click Hint ===== */
 .deck-container::after {
-  content: "click to continue →";
+  content: "click the cards to continue →";
   position: absolute;
   bottom: -45px;
   left: 50%;
