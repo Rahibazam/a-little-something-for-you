@@ -1,128 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labiba Project</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-:root{
-  --fm-bg:#0B0C2A;
-  --fm-indigo:#1C1F4A;
-  --fm-gold:#FFD28A;
-  --fm-white:#FAF9F6;
-}
-
-/* SECTION */
-.fm-section{
-  position:relative;
-  min-height:100vh;
-  background:radial-gradient(circle at 40% 40%,var(--fm-indigo) 0%,var(--fm-bg) 70%);
-  color:var(--fm-white);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  overflow:hidden;
-}
-#fm-stars{
-  position:absolute;inset:0;width:100%;height:100%;
-  z-index:0;
-}
-
-/* INNER */
-.fm-inner{
-  position:relative;
-  z-index:2;
-  max-width:700px;
-  padding:20px;
-}
-
-/* MESSAGE LINE */
-.fm-line{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.6rem,3vw,2.2rem);
-  line-height:1.6;
-  margin:0 auto 1em;
-  background:linear-gradient(90deg,var(--fm-gold),#fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-size:200% auto;
-  animation:fmShimmer 6s linear infinite;
-}
-@keyframes fmShimmer{
-  0%{background-position:0% center;}
-  100%{background-position:200% center;}
-}
-
-/* SIGNATURE */
-.fm-signature{
-  font-family:'Caveat',cursive;
-  font-size:1.5rem;
-  color:var(--fm-gold);
-  opacity:0.85;
-  text-shadow:0 0 10px rgba(255,210,138,0.25);
-  margin-bottom:2em;
-}
-
-/* REPLAY BUTTON */
-.fm-btn{
-  border:none;
-  padding:10px 22px;
-  border-radius:40px;
-  font-family:'Poppins',sans-serif;
-  font-weight:400;
-  color:var(--fm-bg);
-  background:linear-gradient(90deg,var(--fm-gold),#E0C3FC);
-  cursor:pointer;
-  box-shadow:0 0 15px rgba(255,210,138,0.3);
-  transition:transform 0.3s ease,box-shadow 0.3s ease;
-}
-.fm-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 30px rgba(255,210,138,0.4);
-}
-
-/* FADE-IN ANIMATION */
-.fm-line,.fm-signature,.fm-btn{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fmFadeIn 1.6s ease forwards;
-}
-.fm-signature{animation-delay:1.4s;}
-.fm-btn{animation-delay:2.2s;}
-@keyframes fmFadeIn{
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .fm-line{font-size:1.5rem;}
-}
-</style>
-
-</head>
-
-<body>
-
-
-  <!-- 🌙 Final Message Section -->
-  <section class="fm-section" id="final-message">
-    <canvas id="fm-stars"></canvas>
-
-    <div class="fm-inner">
-      <p class="fm-line" id="fm-line">Some moments don’t end, they just stay.</p>
-      <p class="fm-signature">— Rahib 🌙</p>
-      <button class="fm-btn" id="fm-replay">Replay Journey</button>
+  <body class="bg-[#0B0C2A] text-white">
+    <!-- 🌌 Global Background (Particles + Gradient) -->
+    <div class="global-bg">
+      <canvas id="particleCanvas"></canvas>
     </div>
-  </section>
 
-  <script>
-    /* 🌠 Starfield Background (slower, calmer) */
-    (function () {
-      const canvas = document.getElementById("fm-stars");
-      if (!canvas) return;
+    <!-- 🌠 Hero / Intro (keeps its own design) -->
+    <section class="intro">
+      <div class="intro-inner">
+        <h1 class="intro-title">Hey Labiba,</h1>
+        <p class="intro-sub">It’s me… Let’s begin.</p>
+        <button class="intro-btn" onclick="scrollToNext()">Start Journey</button>
+      </div>
+    </section>
+
+    <!-- 💌 Message Deck -->
+    <section class="message-deck">
+      <div class="deck-inner">
+        <h2>Little Messages</h2>
+        <p>Tap through a few things I wanted to say.</p>
+        <div class="deck-cards">
+          <div class="card">You’re stronger than you think.</div>
+          <div class="card">You make ordinary things glow.</div>
+          <div class="card">You’ve changed how I see calm.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌷 Why You’re Amazing -->
+    <section class="why-amazing">
+      <div class="cb-inner">
+        <h2>Why You’re Amazing</h2>
+        <p>All the little reasons that make you, you.</p>
+        <div class="cb-book-wrap">
+          <div class="cb-book">
+            <div class="cb-page-left">
+              <div class="cb-page-inner">
+                <p class="cb-left-eyebrow">For Labiba</p>
+                <h3 class="cb-left-heading">A quiet little book<br />about you.</h3>
+                <p class="cb-left-body">
+                  Just small truths I keep noticing about you, gathered here.
+                </p>
+                <p class="cb-left-signature">— Rahib 🤍</p>
+              </div>
+            </div>
+            <div class="cb-page-right">
+              <div class="cb-page-inner">
+                <h3 class="cb-page-heading">Your calm</h3>
+                <p class="cb-page-text">
+                  Because even when everything feels heavy, you make things lighter.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎞️ Reels -->
+    <section class="reel-gallery">
+      <div class="reel-header">
+        <h2>Some moments I wanted to keep</h2>
+        <p>Little glimpses that remind me of you.</p>
+      </div>
+      <div class="reel-grid">
+        <div class="reel-card">
+          <div class="reel-thumb"><span>Reel One</span></div>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb"><span>Reel Two</span></div>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb"><span>Reel Three</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎧 Playlist -->
+    <section class="pl-section">
+      <div class="pl-inner">
+        <h2 class="pl-title">Songs that sound like you</h2>
+        <div class="pl-grid">
+          <div class="pl-card" data-index="0">
+            <div class="pl-cover" style="--cover-url:url('images/song1.jpg');"></div>
+            <div class="pl-meta">
+              <h3 class="pl-song">This Fire</h3>
+              <p class="pl-artist">Killswitch Engage</p>
+            </div>
+            <div class="pl-controls">
+              <button class="pl-btn pl-prev">⏮</button>
+              <button class="pl-btn pl-play">▶</button>
+              <button class="pl-btn pl-next">⏭</button>
+            </div>
+            <audio class="pl-audio" src="audio/song1.mp3"></audio>
+          </div>
+
+          <div class="pl-card" data-index="1">
+            <div class="pl-cover" style="--cover-url:url('images/song2.jpg');"></div>
+            <div class="pl-meta">
+              <h3 class="pl-song">Numb</h3>
+              <p class="pl-artist">Linkin Park</p>
+            </div>
+            <div class="pl-controls">
+              <button class="pl-btn pl-prev">⏮</button>
+              <button class="pl-btn pl-play">▶</button>
+              <button class="pl-btn pl-next">⏭</button>
+            </div>
+            <audio class="pl-audio" src="audio/song2.mp3"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎬 Cosmic Video -->
+    <section class="vs-section">
+      <div class="vs-inner">
+        <div class="vs-header">
+          <h2 class="vs-title">For You</h2>
+          <p class="vs-sub">A small piece of me, captured in light.</p>
+        </div>
+        <div class="vs-video-wrapper">
+          <div class="vs-halo"></div>
+          <video
+            id="vs-video"
+            class="vs-video"
+            src="videos/placeholder.mp4"
+            poster="images/video-placeholder.jpg"
+            controls
+          ></video>
+          <button id="vs-play-btn" class="vs-play-btn">▶</button>
+        </div>
+        <p class="vs-caption">— Thank you for being my favorite part of this universe.</p>
+      </div>
+    </section>
+
+    <!-- 🌙 Final Message -->
+    <section class="fm-section">
+      <div class="fm-inner">
+        <p class="fm-line">Some moments don’t end, they just stay.</p>
+        <p class="fm-signature">— Rahib 🌙</p>
+        <button class="fm-btn" id="fm-replay">Replay Journey</button>
+      </div>
+    </section>
+
+    <!-- 🌌 Global Background Script -->
+    <script>
+      const canvas = document.getElementById("particleCanvas");
       const ctx = canvas.getContext("2d");
       let stars = [], W, H;
       function resize() {
@@ -130,50 +161,42 @@
         H = canvas.height = window.innerHeight;
         stars = [];
         for (let i = 0; i < 80; i++) {
-          stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.2, a: Math.random() * 0.6, s: Math.random() * 0.1 });
+          stars.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 1.2 + 0.4,
+            a: Math.random() * 0.5 + 0.3,
+            s: Math.random() * 0.3 + 0.1,
+          });
         }
       }
       function draw() {
         ctx.clearRect(0, 0, W, H);
-        stars.forEach(s => {
+        stars.forEach((s) => {
           ctx.beginPath();
           ctx.globalAlpha = s.a;
-          ctx.fillStyle = "#FAF9F6";
+          ctx.fillStyle = "rgba(120,200,255,0.25)";
           ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
           ctx.fill();
           s.y -= s.s;
-          if (s.y < -5) { s.y = H + 5; s.x = Math.random() * W; }
+          if (s.y < -5) {
+            s.y = H + 5;
+            s.x = Math.random() * W;
+          }
         });
         requestAnimationFrame(draw);
       }
       window.addEventListener("resize", resize);
-      resize(); draw();
-    })();
+      resize();
+      draw();
 
-    /* ✍️ Typewriter Reveal Effect */
-    (function () {
-      const line = document.getElementById("fm-line");
-      if (!line) return;
-      const text = line.textContent;
-      line.textContent = "";
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          line.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, 80);
-        }
+      function scrollToNext() {
+        document.querySelector(".message-deck").scrollIntoView({ behavior: "smooth" });
       }
-      setTimeout(type, 600);
-    })();
 
-    /* 🔁 Replay Journey Button */
-    document.getElementById("fm-replay").addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
-
-
-</body>
-
+      document.getElementById("fm-replay").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
 </html>

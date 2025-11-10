@@ -1,3 +1,28 @@
+/* GLOBAL BACKGROUND */
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, #0B0C2A 0%, #06071D 90%);
+  overflow: hidden;
+}
+#particleCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* FLOAT ALL MODULES ABOVE IT */
+section:not(.intro) {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
 /* ===== Base & Palette ===== */
 :root {
   --deep-space: #0B0C2A;
@@ -269,7 +294,8 @@ section.intro {
   height: 100%;
   border-radius: 20px;
   padding: 40px;
-  background: rgba(20, 20, 45, 0.55);
+  background:  radial-gradient(circle at 100% 0%, rgba(120, 200, 255, 0.25), transparent 65%),
+    rgba(6, 7, 29, 0.96);
   box-shadow: 0 0 25px rgba(120, 200, 255, 0.15), inset 0 0 30px rgba(255, 210, 138, 0.08);
   backdrop-filter: blur(18px);
   transform: scale(0.9) translateY(40px) rotateY(8deg);
@@ -301,7 +327,10 @@ section.intro {
 .card.active {
   opacity: 1;
   transform: scale(1) translateY(0) rotateY(0);
-  box-shadow: 0 0 40px rgba(120, 200, 255, 0.25);
+  box-shadow:
+  0 0 40px rgba(0, 153, 255, 0.65),   /* blue glow */
+  0 0 60px rgba(255, 210, 138, 0.4),  /* golden glow */
+  0 0 100px rgba(164, 92, 255, 0.3);  /* violet haze */
 }
 
 .card.slide-out {
@@ -714,6 +743,8 @@ section.intro {
 
 .reel-play {
   background: linear-gradient(90deg, var(--reel-gold), var(--reel-gray));
+  padding-left: 18px;
+  padding-top: 11px;
   color: #0B0C2A;
   border: none;
   border-radius: 50%;
@@ -1098,7 +1129,7 @@ section.intro {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(180deg, #0B0C2A 0%, #06071D 80%);
 }
 
 .vs-halo {
